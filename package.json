@@ -30,6 +30,5 @@
   "dependencies": {
     "markdown-pdf": "^10.0.0"
   },
-  "pkg" : {
-  }
+  "bin": "index.js"
 }
