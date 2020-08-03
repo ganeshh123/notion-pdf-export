@@ -1,29 +1,16 @@
 /* Imports */
-let markdownpdf = require('markdown-pdf')
+let markdownpdf = require(process.cwd() + '/markdown-pdf/index' )
 let fileSystem = require('fs')
 let path = require('path')
 
-/*Function to remove markdown files after conversion */
-let deleteFiles = (filesToDelete, callback) => {
-    if (filesToDelete.length==0) callback();
-    else {
-       var f = filesToDelete.pop();
-       fileSystem.unlink(f, function(err){
-          if (err) callback(err);
-          else {
-             console.log(f + ' deleted.');
-             deleteFiles(filesToDelete, callback);
-          }
-       });
-    }
- }
 
-
- const removeDir = function(path) {
+ /* Removes Original Markdown Files and Folders from directory */
+ let removeDir = (path) => {
     if (fileSystem.existsSync(path)) {
       /*Delete Markdown Folders with assets */
         let files = fileSystem.readdirSync(path).filter((file) => {
             return file != 'node_modules'
+                && file != 'markdown-pdf'
                 && file != 'pdfs'
                 && file != '.git'
                 && file != 'package.json'
@@ -46,16 +33,35 @@ let deleteFiles = (filesToDelete, callback) => {
             fileSystem.unlinkSync(path + "/" + filename)
           }
         })
-        fileSystem.rmdirSync(path)
+        if(path != process.cwd()){
+            try{
+                fileSystem.rmdirSync(path)
+            }
+            catch(err){
+                console.log('Folders Deleted')
+            }
+        }
       } else {
-        fileSystem.rmdirSync(path)
+        if(path != process.cwd()){
+            try{
+                fileSystem.rmdirSync(path)
+            }
+            catch(err){
+                console.log('Folders Deleted')
+            }
+        }
       }
     }
   }
 
+
+
 /* Create an Array of Markdown Files to be Converted */
 let markdownFiles = []
-fileSystem.readdirSync(__dirname).forEach(file => {
+console.log('Directory being checked is ')
+console.log(__dirname)
+fileSystem.readdirSync(process.cwd()).forEach(file => {
+    console.log(file)
     if(file.includes('.md')){
         markdownFiles.push(file)
     }
@@ -66,33 +72,31 @@ console.log(markdownFiles)
 /* Create a book with all markdown files */
 let bookPath = process.cwd() + "/pdfs/book.pdf"
 console.log('Creating a book...')
-markdownpdf().concat.from(markdownFiles).to(bookPath, function () {
+markdownpdf({phantomPath: path.join(process.cwd(), 'phantomjs.exe')}).concat.from(markdownFiles).to(bookPath, function () {
     console.log("Created a book at", bookPath)
 
     /*Export Individual Documents as PDF */
-    console.log('Exporting Pages Individually')
+    console.log('\nExporting Pages Individually')
     let pdfDocs = []
-    fileSystem.readdirSync(__dirname).forEach(fileName => {
+    fileSystem.readdirSync(process.cwd()).forEach(fileName => {
         if(fileName.includes('.md')){
             let pdfFileName = fileName.replace('.md', '.pdf')
             pdfDocs.push(path.join(process.cwd(), 'pdfs', 'pages', pdfFileName))
         }
     })
-    markdownpdf().from(markdownFiles).to(pdfDocs, function () {
+    markdownpdf({phantomPath: path.join(process.cwd(), 'phantomjs.exe')}).from(markdownFiles).to(pdfDocs, function () {
         pdfDocs.forEach(function (d) { console.log("Created", d) })
 
-
         /*Delete Original Markdown Files and Folders */
-        console.log('Deleting Original Markdown Files')
-        let filesToDelete = markdownFiles.slice()
-        deleteFiles(filesToDelete, () => {
-
-            
-            removeDir(process.cwd())
-        })
-
-
+        console.log('Deleting Original Markdown Files...')
+        removeDir(process.cwd())
         
+        /* Only exit when user presses a key */
+        console.log('Press any key to exit');
+
+        process.stdin.setRawMode(true);
+        process.stdin.resume();
+        process.stdin.on('data', process.exit.bind(process, 0));
     })
 
 })
