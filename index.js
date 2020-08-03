@@ -26,7 +26,14 @@ let deleteFiles = (filesToDelete, callback) => {
             return file != 'node_modules'
                 && file != 'pdfs'
                 && file != '.git'
-                
+                && file != 'package.json'
+                && file != 'package-lock.json'
+                && file != '.gitignore'
+                && file != 'index.js'
+                && file != 'LICENSE'
+                && file != 'README.md'
+                && !file.includes('.exe')
+
         }
         )
         console.log(files)
