@@ -1,3 +1,5 @@
+/* Determines if System is Mac or Windows */
+let isMac = process.platform === 'darwin'
 /* Imports */
 let markdownpdf = require(process.cwd() + '/markdown-pdf/index' )
 // Markdown PDF is bundled separately because there are issues running phantom with render.js when
@@ -7,12 +9,20 @@ let fileSystem = require('fs')
 let path = require('path')
 
 
+/* Set name of phantom executable depending on OS */
+let phantomExecutable = 'phantomjs.exe'
+if(isMac){
+  phantomExecutable = 'phantomjs'
+}
+
+
  /* Removes Original Markdown Files and Folders from directory */
  let removeDir = (path) => {
     if (fileSystem.existsSync(path)) {
       /* Ensure that software files and generated PDFs are not deleted */
         let files = fileSystem.readdirSync(path).filter((file) => {
             return file != 'node_modules'
+                && file != 'notion-pdf-export'
                 && file != 'markdown-pdf'
                 && file != 'pdfs'
                 && file != '.git'
@@ -22,6 +32,8 @@ let path = require('path')
                 && file != 'index.js'
                 && file != 'LICENSE'
                 && file != 'README.md'
+                && file != 'phantomjs'
+                && file != 'npe'
                 && !file.includes('.exe')
 
         }
@@ -81,7 +93,7 @@ console.log(markdownFiles)
 /* Create a book with all markdown files */
 let bookPath = process.cwd() + "/pdfs/book.pdf"
 console.log('\n\nCreating a book...')
-markdownpdf({phantomPath: path.join(process.cwd(), 'phantomjs.exe')}).concat.from(markdownFiles).to(bookPath, function () {
+markdownpdf({phantomPath: path.join(process.cwd(), phantomExecutable)}).concat.from(markdownFiles).to(bookPath, function () {
     console.log("Created a book at", bookPath)
 
     /*Export Individual Documents as PDF */
@@ -93,7 +105,7 @@ markdownpdf({phantomPath: path.join(process.cwd(), 'phantomjs.exe')}).concat.fro
             pdfDocs.push(path.join(process.cwd(), 'pdfs', 'pages', pdfFileName))
         }
     })
-    markdownpdf({phantomPath: path.join(process.cwd(), 'phantomjs.exe')}).from(markdownFiles).to(pdfDocs, function () {
+    markdownpdf({phantomPath: path.join(process.cwd(), phantomExecutable)}).from(markdownFiles).to(pdfDocs, function () {
         pdfDocs.forEach(function (d) { console.log("Created", d) })
 
         /*Delete Original Markdown Files and Folders */
@@ -102,11 +114,15 @@ markdownpdf({phantomPath: path.join(process.cwd(), 'phantomjs.exe')}).concat.fro
         
         /* Only exit when user presses a key */
         console.log('\nCompleted, PDFs can be found in the pdfs folder :)')
-        console.log('Press any key to exit');
+        if(isMac){
+          console.log('Close this Window to Exit')
+        }else{
+          console.log('Press any key to exit')
+        }
 
-        process.stdin.setRawMode(true);
-        process.stdin.resume();
-        process.stdin.on('data', process.exit.bind(process, 0));
+        process.stdin.setRawMode(true)
+        process.stdin.resume()
+        process.stdin.on('data', process.exit.bind(process, 0))
     })
 
 })
