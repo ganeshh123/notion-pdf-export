@@ -81,7 +81,12 @@ typings/
 
 # Nuxt.js build / generate output
 .nuxt
-dist
+dist/macos/node_modules
+dist/macos/markdown-pdf
+dist/macos/npe
+
+dist/win32/node_modules
+dist/macos/markdown-pdf
 
 # Gatsby files
 .cache/
