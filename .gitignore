@@ -112,3 +112,4 @@ dist/win32/notion-pdf-exporter.exe
 
 markdowns/
 pdfs/
+dist/macos/notion-pdf-export
