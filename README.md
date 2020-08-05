@@ -20,7 +20,7 @@ Get the latest download for Windows and Mac from the releases page:
 
 2. In [Notion](https://notion.so), go to the database and click Export, choose 'Markdown & CSV' and ensure 'Include Subpages' is on.
 
-    ![notion-export](/docs/notion_export.png)
+    ![notion-export](/docs/notion-export.png)
 
 3. Extract and place the markdown files with folders containing images in the same folder as 'notion-pdf-export.exe' (Windows) or 'notion-pdf-export' (Mac).
 
