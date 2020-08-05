@@ -16,23 +16,23 @@ Get the latest download for Windows and Mac from the releases page:
 
 1. Download the tool and extract.
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/374675d4-2c33-4941-9a03-54c36a183ea2/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/374675d4-2c33-4941-9a03-54c36a183ea2/Untitled.png)
+    ![downloaded_program](./docs/downloaded_program.png)
 
 2. In [Notion](https://notion.so), go to the database and click Export, choose 'Markdown & CSV' and ensure 'Include Subpages' is on.
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2d5f18e2-0111-4168-a507-31e6a99a02b3/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2d5f18e2-0111-4168-a507-31e6a99a02b3/Untitled.png)
+    ![notion-export](./docs/notion_export.png)
 
 3. Extract and place the markdown files with folders containing images in the same folder as 'notion-pdf-export.exe' (Windows) or 'notion-pdf-export' (Mac).
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ab89fc19-3e49-463e-a591-1cff1227c2b8/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ab89fc19-3e49-463e-a591-1cff1227c2b8/Untitled.png)
+    ![placing-markdown-files](./docs/placing-markdown-files.png)
 
 4. Double Click 'notion-pdf-export.exe' (Windows) or 'notion-pdf-export' (Mac) and wait for the process to be completed.
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0561d492-c46d-4fc5-ab55-8b66ae4534c1/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0561d492-c46d-4fc5-ab55-8b66ae4534c1/Untitled.png)
+    ![running-program](./docs/running-program.png)
 
 5. A PDF book consisting of all the pages can be found in pdfs>book.pdf and all the individual pages can be found converted into pdfs at pdfs>pages .
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/75818f7c-4050-4f8d-b404-63113706ee34/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/75818f7c-4050-4f8d-b404-63113706ee34/Untitled.png)
+    ![created_pdfs](./created_pdfs.png)
 
 ---
 
@@ -116,7 +116,7 @@ Confirm by running:
 nexe -v
 ```
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fc272f11-f518-4f4b-80dd-355dded0a713/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fc272f11-f518-4f4b-80dd-355dded0a713/Untitled.png)
+![nexe-version](./docs/nexe-version.png)
 
 Check that the version is `4.0.0-beta.4`
 
@@ -154,7 +154,7 @@ To distribute the Windows Executable, place it in a directory with the following
 - The original 'node_modules' folder from the source code
 - The 'phantomjs.exe' prebuilt binary for Windows placed inside 'markdown-pdf' folder. This can be found at ***node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs.exe***
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/95833769-94d5-4567-8fdb-775c93f50740/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/95833769-94d5-4567-8fdb-775c93f50740/Untitled.png)
+![win32-build](./docs/win32-build.png)
 
 To distribute the Mac Executable (npe), place it in a directorywith the following:
 
@@ -171,4 +171,4 @@ To distribute the Mac Executable (npe), place it in a directorywith the followin
 
     This can be obtained from 'mac_script.sh' or found inside /dist/macos
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/af7da32f-b59a-4540-893a-0c9adf404ca3/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/af7da32f-b59a-4540-893a-0c9adf404ca3/Untitled.png)
+![macos_build](./docs/macos_build.png)
