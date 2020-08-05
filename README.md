@@ -2,7 +2,6 @@
 
 A tool to allow batch PDF export for free Notion users. You can export as markdown and then use this tool to convert those into PDFs.
 
----
 
 ## Download
 
@@ -10,7 +9,6 @@ Get the latest download for Windows and Mac from the releases page:
 
 [https://github.com/ganeshh123/notion-pdf-export/releases](https://github.com/ganeshh123/notion-pdf-export/releases)
 
----
 
 ## Usage
 
@@ -130,22 +128,19 @@ Run **build_macos** on **Mac** to build a Mac Executable. This can be found in /
 
 If you wish to compile for Mac on Windows or Vice Versa, you can do so using the manual method below. This is trickier and will require obtaining a phantomjs binary built for the desired platform and placing it in the correct place.
 
+
 To Compile Manually
 
 To build a Windows Executable, run the command:
-
 ```bash
 nexe . --target win32-x86-10.13.0 -o ./dist/win32/notion-pdf-export.exe
 ```
-
 in the root directory of the project.
 
 To build a Mac executable, run the command:
-
 ```bash
 nexe . -t macos-10.13.0 -o ./dist/macos/npe
 ```
-
 in the root directory of the project. Note that this is built under the name 'npe' which is done for a reason.
 
 To distribute the Windows Executable, place it in a directory with the following:
