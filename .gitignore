@@ -110,7 +110,5 @@ dist/win32/notion-pdf-exporter.exe
 # TernJS port file
 .tern-port
 
-markdowns/
 pdfs/
-dist/macos/notion-pdf-export
 dist/win32/notion-pdf-export.exe
