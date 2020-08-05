@@ -86,7 +86,8 @@ dist/macos/markdown-pdf
 dist/macos/npe
 
 dist/win32/node_modules
-dist/macos/markdown-pdf
+dist/win32/markdown-pdf
+dist/win32/notion-pdf-exporter.exe
 
 # Gatsby files
 .cache/
