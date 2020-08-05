@@ -16,23 +16,23 @@ Get the latest download for Windows and Mac from the releases page:
 
 1. Download the tool and extract.
 
-    ![downloaded_program](./docs/downloaded_program.png)
+    ![downloaded_program](/docs/downloaded_program.png)
 
 2. In [Notion](https://notion.so), go to the database and click Export, choose 'Markdown & CSV' and ensure 'Include Subpages' is on.
 
-    ![notion-export](./docs/notion_export.png)
+    ![notion-export](/docs/notion_export.png)
 
 3. Extract and place the markdown files with folders containing images in the same folder as 'notion-pdf-export.exe' (Windows) or 'notion-pdf-export' (Mac).
 
-    ![placing-markdown-files](./docs/placing-markdown-files.png)
+    ![placing-markdown-files](/docs/placing-markdown-files.png)
 
 4. Double Click 'notion-pdf-export.exe' (Windows) or 'notion-pdf-export' (Mac) and wait for the process to be completed.
 
-    ![running-program](./docs/running-program.png)
+    ![running-program](/docs/running-program.png)
 
 5. A PDF book consisting of all the pages can be found in pdfs>book.pdf and all the individual pages can be found converted into pdfs at pdfs>pages .
 
-    ![created_pdfs](./created_pdfs.png)
+    ![created_pdfs](/docs/created_pdfs.png)
 
 ---
 
@@ -116,7 +116,7 @@ Confirm by running:
 nexe -v
 ```
 
-![nexe-version](./docs/nexe-version.png)
+![nexe-version](/docs/nexe-version.png)
 
 Check that the version is `4.0.0-beta.4`
 
@@ -154,7 +154,7 @@ To distribute the Windows Executable, place it in a directory with the following
 - The original 'node_modules' folder from the source code
 - The 'phantomjs.exe' prebuilt binary for Windows placed inside 'markdown-pdf' folder. This can be found at ***node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs.exe***
 
-![win32-build](./docs/win32-build.png)
+![win32-build](/docs/win32-build.png)
 
 To distribute the Mac Executable (npe), place it in a directorywith the following:
 
@@ -171,4 +171,4 @@ To distribute the Mac Executable (npe), place it in a directorywith the followin
 
     This can be obtained from 'mac_script.sh' or found inside /dist/macos
 
-![macos_build](./docs/macos_build.png)
+![macos_build](/docs/macos_build.png)
