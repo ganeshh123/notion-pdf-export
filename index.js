@@ -10,9 +10,9 @@ let path = require('path')
 
 
 /* Set name of phantom executable depending on OS */
-let phantomExecutable = 'phantomjs.exe'
+let phantomExecutable = 'markdown-dpf/phantomjs.exe'
 if(isMac){
-  phantomExecutable = 'phantomjs'
+  phantomExecutable = 'markdown-pdf/phantomjs'
 }
 
 
