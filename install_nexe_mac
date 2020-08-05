@@ -1,0 +1,12 @@
+#/bin/bash
+cd "$0"/..
+npm install
+sudo npm install -g nexe
+nexe . -t win32-x86-10.13.0
+nexe . -t macos-10.13.0 ./npe
+sudo npm uninstall -g nexe
+sudo npm install -g cspotcode/nexe#19a5046
+npm install -g cspotcode/nexe#19a5046
+rm -f ./notion-pdf-export.exe
+rm -f ./notion-pdf-export
+exit 0

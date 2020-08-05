@@ -35,6 +35,7 @@ if(isMac){
                 && file != 'phantomjs'
                 && file != 'npe'
                 && !file.includes('.exe')
+                && !file.includes('notion-pdf-export')
 
         }
         )
