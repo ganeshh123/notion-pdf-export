@@ -81,11 +81,16 @@ fileSystem.readdirSync(process.cwd()).forEach(file => {
 if(markdownFiles.length === 0){
     /* Only exit when user presses a key */
     console.log('\nPlease add some markdown files to the same folder as the exe file')
-    console.log('Press any key to exit');
-
-    process.stdin.setRawMode(true);
-    process.stdin.resume();
-    process.stdin.on('data', process.exit.bind(process, 0));
+    
+    if(isMac){
+      console.log('\nClose this Window to Exit')
+      process.exit.bind(process, 0)
+    }else{
+      console.log('\nPress any key to exit')
+      process.stdin.setRawMode(true)
+      process.stdin.resume()
+      process.stdin.on('data', process.exit.bind(process, 0))
+    }
 }
 console.log('Files to be converted :')
 console.log(markdownFiles)
@@ -116,13 +121,13 @@ markdownpdf({phantomPath: path.join(process.cwd(), phantomExecutable)}).concat.f
         console.log('\nCompleted, PDFs can be found in the pdfs folder :)')
         if(isMac){
           console.log('Close this Window to Exit')
+          process.exit.bind(process, 0)
         }else{
           console.log('Press any key to exit')
+          process.stdin.setRawMode(true)
+          process.stdin.resume()
+          process.stdin.on('data', process.exit.bind(process, 0))
         }
-
-        process.stdin.setRawMode(true)
-        process.stdin.resume()
-        process.stdin.on('data', process.exit.bind(process, 0))
     })
 
 })
