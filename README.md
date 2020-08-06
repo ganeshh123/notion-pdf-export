@@ -7,8 +7,10 @@ A tool to allow batch PDF export for free Notion users. You can export as markdo
 
 Get the latest download for Windows and Mac from the releases page:
 
-[https://github.com/ganeshh123/notion-pdf-export/releases](https://github.com/ganeshh123/notion-pdf-export/releases)
+[https://github.com/ganeshh123/notion-pdf-export/releases](https://github.com/ganeshh123/notion-pdf-export/releases/latest)
 
+[Download for Windows](https://github.com/ganeshh123/notion-pdf-export/releases/download/1.1.0/windows_notion-pdf-export_1.1.0.zip)
+[Download for Mac](https://github.com/ganeshh123/notion-pdf-export/releases/download/1.1.0/mac_notion-pdf-export_1.1.0.zip)
 
 ## Usage
 
