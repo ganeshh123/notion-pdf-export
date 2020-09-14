@@ -112,3 +112,5 @@ dist/win32/notion-pdf-exporter.exe
 
 pdfs/
 dist/win32/notion-pdf-export.exe
+
+.DS_Store
