@@ -1,4 +1,5 @@
 let fileSystem = require('fs')
+let renameToAscii = require('./rename_to_ascii')
 
 let readHtmlFiles = (targetPath) => {
     /* Create an Array of HTML Files to be Converted */
@@ -8,7 +9,7 @@ let readHtmlFiles = (targetPath) => {
             htmlFiles.push(file)
         }
     })
-    return htmlFiles
+    return renameToAscii(htmlFiles)
 }
 
 module.exports = readHtmlFiles
