@@ -7,15 +7,15 @@ let path = require('path')
 /* Determines if System is Mac or Windows */
 let isMac = process.platform === 'darwin'
 
+/* Set name of phantom executable depending on OS */
+let phantomExecutable = '/utils/markdown-pdf/phantomjs.exe'
+if(isMac){
+phantomExecutable = '/utils/markdown-pdf/phantomjs'
+}
+
 let convertFromMarkdown = (markdownFiles, nextStep) => {
 
-    /* Set name of phantom executable depending on OS */
-    let phantomExecutable = '/utils/markdown-pdf/phantomjs.exe'
-    if(isMac){
-    phantomExecutable = '/utils/markdown-pdf/phantomjs'
-    }
-
-    console.log('Markdown Files to be converted :')
+    console.log('\n\nMarkdown Files to be converted :')
     console.log(markdownFiles)
 
     let pdfDocs = []
@@ -26,7 +26,7 @@ let convertFromMarkdown = (markdownFiles, nextStep) => {
         }
     })
 
-    console.log('Converting Markdown Files to PDF')
+    console.log('\nConverting Markdown Files to PDF\n')
 
     markdownpdf({phantomPath: path.join(process.cwd(), phantomExecutable)}).from(markdownFiles).to(pdfDocs, () => {
         pdfDocs.forEach((pdfDoc) => { console.log("Created", pdfDoc) })
