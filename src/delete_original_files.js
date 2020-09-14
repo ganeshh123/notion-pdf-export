@@ -1,6 +1,7 @@
 let fileSystem = require('fs')
 let path = require('path')
 let folder_empty = require('./folder_empty')
+let canDelete = require('./can_delete')
 
 /* Recursively Deletes a folder and it's contents */
 // targetPath = absolute path of folder to be deleted
@@ -13,8 +14,7 @@ let removeDir = (targetPath, exclusions) => {
         let filesToDelete = fileSystem.readdirSync(targetPath).filter((file) => {
                 if(exclusions){
                     return !exclusions.includes(file) 
-                    && !file.includes('.exe')
-                    && !file.includes('notion-pdf-export')
+                    && (canDelete(file) || fileSystem.statSync(path.join(targetPath, file)).isDirectory())
                 }else{
                     return file
                 }
