@@ -84,6 +84,7 @@ typings/
 dist/macos/node_modules
 dist/macos/markdown-pdf
 dist/macos/npe
+dist/macos/utils
 
 dist/win32/node_modules
 dist/win32/utils/
