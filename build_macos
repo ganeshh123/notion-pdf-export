@@ -1,9 +1,8 @@
 #/bin/bash
 cd "$0"/..
 npm install
-mkdir ./dist/macos
+mkdir -p ./dist/macos/utils
 cp -R ./node_modules ./dist/macos/node_modules
-mkdir ./dist/macos/utils
 cp -R utils/wkhtmltopdf ./dist/macos/utils/wkhtmltopdf
 cp ./LICENSE ./dist/macos/LICENSE
 cp ./mac_script.sh ./dist/macos/notion-pdf-export
