@@ -7,6 +7,9 @@ let isMac = process.platform === 'darwin'
 
 
 let wkhtmltopdf = path.join(process.cwd(), '/utils/wkhtmltopdf/wkhtmltopdf.exe')
+if(isMac){
+    wkhtmltopdf = path.join(process.cwd(), '/utils/wkhtmltopdf/wkhtmltopdf')
+}
 
 let convertFromHtml = (htmlFiles, nextStep) => {
 

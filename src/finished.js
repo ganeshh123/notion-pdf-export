@@ -4,6 +4,7 @@ let isMac = process.platform === 'darwin'
 let finished = () => {
     if(isMac){
         console.log('\nClose this Window to Exit')
+        console.log('-------------------------------\n\n')
         process.exit.bind(process, 0)
     }else{
         console.log('\nPress any key to exit')
