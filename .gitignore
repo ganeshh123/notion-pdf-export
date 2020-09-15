@@ -84,9 +84,10 @@ typings/
 dist/macos/node_modules
 dist/macos/markdown-pdf
 dist/macos/npe
+dist/macos/utils
 
 dist/win32/node_modules
-dist/win32/markdown-pdf
+dist/win32/utils/
 dist/win32/notion-pdf-exporter.exe
 
 # Gatsby files
@@ -112,3 +113,5 @@ dist/win32/notion-pdf-exporter.exe
 
 pdfs/
 dist/win32/notion-pdf-export.exe
+
+.DS_Store
