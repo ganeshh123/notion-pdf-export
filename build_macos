@@ -1,7 +1,6 @@
 #/bin/bash
 cd "$0"/..
 npm install
-ls -l
 cp -R ./node_modules ./dist/macos/node_modules
 mkdir ./dist/macos/utils
 cp -R utils/wkhtmltopdf ./dist/macos/utils/wkhtmltopdf
