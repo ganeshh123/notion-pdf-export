@@ -170,3 +170,5 @@ To distribute the Mac Executable (npe), place it in a directorywith the followin
     This can be obtained from 'mac_script.sh' or found inside /dist/macos
 
 ![macos_build](/docs/macos_build.png)
+
+<a href="https://iconscout.com/icons/notion" target="_blank">Notion Icon</a> by <a href="https://iconscout.com/contributors/Rengised">Alex Martinov</a> on <a href="https://iconscout.com">Iconscout</a>
