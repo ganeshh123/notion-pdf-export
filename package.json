@@ -27,8 +27,6 @@
     "url": "https://github.com/ganeshh123/notion-pdf-export/issues"
   },
   "homepage": "https://github.com/ganeshh123/notion-pdf-export#readme",
-  "dependencies": {
-    "markdown-pdf": "^10.0.0"
-  },
+  "dependencies": {},
   "bin": "index.js"
 }
