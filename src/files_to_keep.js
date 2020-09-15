@@ -13,5 +13,6 @@ module.exports = [
     'phantomjs',
     'npe',
     'utils',
-    'notion-pdf-export.exe'
+    'notion-pdf-export.exe',
+    '.DS_Store'
 ]

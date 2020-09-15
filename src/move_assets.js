@@ -8,7 +8,7 @@ let moveAssets = (targetPath) => {
         return !filesToKeep.includes(file)
     })
 
-    if(files){
+    if(files.length > 0){
         let newPaths = []
 
         files.forEach((file, index) => {
