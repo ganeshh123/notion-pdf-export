@@ -1,4 +1,4 @@
-let markdownpdf = require(process.cwd() + '/utils/markdown-pdf/index' )
+/*let markdownpdf = require(process.cwd() + '/utils/markdown-pdf/index' ) */
 // Markdown PDF is bundled separately because there are issues running phantom with render.js when
 // bundled as an executable with nexe
 let fileSystem = require('fs')
