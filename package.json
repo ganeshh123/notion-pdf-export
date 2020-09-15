@@ -1,7 +1,7 @@
 {
   "name": "notion-pdf-export",
-  "version": "1.1.0",
-  "description": "A tool to allow batch PDF export for free Notion users. Convert exported Markdown files to PDFs.",
+  "version": "1.2.0",
+  "description": "A tool to allow batch PDF export for free Notion users. Convert exported HTML files to PDFs.",
   "main": "index.js",
   "scripts": {
     "test": "node index.js"
