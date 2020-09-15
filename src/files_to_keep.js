@@ -12,5 +12,6 @@ module.exports = [
     'README.md',
     'phantomjs',
     'npe',
-    'utils'
+    'utils',
+    'notion-pdf-export.exe'
 ]

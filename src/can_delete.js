@@ -5,7 +5,6 @@ let extensionsToDelete = [
     'html',
     'jpg',
     'jpeg',
-    'gif'
 ]
 
 let canDelete = (file) => {
