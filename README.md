@@ -17,7 +17,7 @@ Get the latest download for Windows and Mac from the releases page:
 
 1. Download the tool and extract.
 
-    ![downloaded_program](/docs/downloaded_program.png)
+    ![downloaded_program](./docs/downloaded_program.png)
 
 2. In [Notion](https://notion.so), go to the database and click Export, choose 'HTML' and ensure 'Include Subpages' is on.
 
