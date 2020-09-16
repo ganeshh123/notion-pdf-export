@@ -148,7 +148,6 @@ To distribute the Windows Executable, place it in a directory with the following
 
 - The original 'utils' folder from the source code
 
-![win32-build](./docs/win32-build.png)
 
 To distribute the Mac Executable (npe), place it in a directorywith the following:
 
@@ -163,6 +162,5 @@ To distribute the Mac Executable (npe), place it in a directorywith the followin
 
     This can be obtained from 'mac_script.sh' or found inside /dist/macos
 
-![macos_build](./docs/macos_build.png)
-
+## Credits
 <a href="https://iconscout.com/icons/notion" target="_blank">Notion Icon</a> by <a href="https://iconscout.com/contributors/Rengised">Alex Martinov</a> on <a href="https://iconscout.com">Iconscout</a>
