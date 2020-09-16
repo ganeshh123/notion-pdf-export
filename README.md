@@ -17,23 +17,23 @@ Get the latest download for Windows and Mac from the releases page:
 
 1. Download the tool and extract.
 
-    ![downloaded_program](/docs/downloaded_program.png)
+    ![downloaded_program](./docs/downloaded_program.png)
 
-2. In [Notion](https://notion.so), go to the database and click Export, choose 'HTML' and ensure 'Include Subpages' is on.
+2. In [Notion](https://notion.so), place all the pages you wish to export into one page and click Export, choose 'HTML' and ensure 'Include Subpages' is on.
 
-    ![notion-export](/docs/notion-export.png)
+    ![notion-export](./docs/notion-export.png)
 
-3. Extract and place the html files with folders containing images in the same folder as 'notion-pdf-export.exe' (Windows) or 'notion-pdf-export' (Mac).
+3. Extract the export to find a list of HTML files and folders for each page. Place the HTML files with folders containing images in the same folder as 'notion-pdf-export.exe' (Windows) or 'notion-pdf-export' (Mac).
 
-    ![placing-markdown-files](/docs/placing-markdown-files.png)
+    ![placing-markdown-files](./docs/placing-html-files.png)
 
 4. Double Click 'notion-pdf-export.exe' (Windows) or 'notion-pdf-export' (Mac) and wait for the process to be completed.
 
-    ![running-program](/docs/running-program.png)
+    ![running-program](./docs/running-program.png)
 
-5. All the individual pages can be found converted into pdfs at pdfs>pages .
+5. All the individual pages can be found converted into PDF Documents inside the pdfs folder.
 
-    ![created_pdfs](/docs/created_pdfs.png)
+    ![created_pdfs](./docs/created_pdfs.png)
 
 ---
 
@@ -46,9 +46,7 @@ Get the latest download for Windows and Mac from the releases page:
     ```bash
     npm install
     ```
-
-2. Go to node_modules>phantomjs-prebuilt>lib>phantom>bin and copy 'phantomjs.exe' (Windows) or 'phantomjs' (Mac) into the the project root directory
-3. Run this command to run the script:
+2. Run this command to run the script:
 
     ```bash
     node index.js
@@ -148,17 +146,12 @@ in the root directory of the project. Note that this is built under the name 'np
 
 To distribute the Windows Executable, place it in a directory with the following:
 
-- The 'markdown-pdf' folder that comes with the source code
-- The original 'node_modules' folder from the source code
-- The 'phantomjs.exe' prebuilt binary for Windows placed inside 'markdown-pdf' folder. This can be found at ***node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs.exe***
+- The original 'utils' folder from the source code
 
-![win32-build](/docs/win32-build.png)
 
 To distribute the Mac Executable (npe), place it in a directorywith the following:
 
-- The 'markdown-pdf' folder that comes with the source code
-- The original 'node_modules' folder from the source code
-- The 'phantomjs' prebuilt binary for Mac placed inside the 'markdown-pdf' folder. This can be found at ***node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs***
+- The original 'utils' folder from the source code
 - An executable unix shell script with the following contents, called 'notion-pdf-export':
 
     ```bash
@@ -169,6 +162,5 @@ To distribute the Mac Executable (npe), place it in a directorywith the followin
 
     This can be obtained from 'mac_script.sh' or found inside /dist/macos
 
-![macos_build](/docs/macos_build.png)
-
+## Credits
 <a href="https://iconscout.com/icons/notion" target="_blank">Notion Icon</a> by <a href="https://iconscout.com/contributors/Rengised">Alex Martinov</a> on <a href="https://iconscout.com">Iconscout</a>
