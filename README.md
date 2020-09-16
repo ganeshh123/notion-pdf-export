@@ -19,21 +19,21 @@ Get the latest download for Windows and Mac from the releases page:
 
     ![downloaded_program](./docs/downloaded_program.png)
 
-2. In [Notion](https://notion.so), go to the database and click Export, choose 'HTML' and ensure 'Include Subpages' is on.
+2. In [Notion](https://notion.so), place all the pages you wish to export into one page and click Export, choose 'HTML' and ensure 'Include Subpages' is on.
 
-    ![notion-export](/docs/notion-export.png)
+    ![notion-export](./docs/notion-export.png)
 
-3. Extract and place the html files with folders containing images in the same folder as 'notion-pdf-export.exe' (Windows) or 'notion-pdf-export' (Mac).
+3. Extract the export to find a list of HTML files and folders for each page. Place the HTML files with folders containing images in the same folder as 'notion-pdf-export.exe' (Windows) or 'notion-pdf-export' (Mac).
 
-    ![placing-markdown-files](/docs/placing-markdown-files.png)
+    ![placing-markdown-files](./docs/placing-html-files.png)
 
 4. Double Click 'notion-pdf-export.exe' (Windows) or 'notion-pdf-export' (Mac) and wait for the process to be completed.
 
-    ![running-program](/docs/running-program.png)
+    ![running-program](./docs/running-program.png)
 
-5. All the individual pages can be found converted into pdfs at pdfs>pages .
+5. All the individual pages can be found converted into PDF Documents inside the pdfs folder.
 
-    ![created_pdfs](/docs/created_pdfs.png)
+    ![created_pdfs](./docs/created_pdfs.png)
 
 ---
 
