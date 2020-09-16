@@ -1,14 +1,17 @@
 # Notion PDF Export
 
-A tool to allow batch PDF export for free Notion users. You can export as markdown and then use this tool to convert those into PDFs.
+A tool to allow batch PDF export for free Notion users. You can export as HTML with subpages and then use this tool to convert those into PDFs.
 
 
 ## Download
 
 Get the latest download for Windows and Mac from the releases page:
 
-[https://github.com/ganeshh123/notion-pdf-export/releases](https://github.com/ganeshh123/notion-pdf-export/releases)
+[https://github.com/ganeshh123/notion-pdf-export/releases](https://github.com/ganeshh123/notion-pdf-export/releases/latest)
 
+[Download for Windows](https://github.com/ganeshh123/notion-pdf-export/releases/download/1.1.0/windows_notion-pdf-export_1.1.0.zip)
+
+[Download for Mac](https://github.com/ganeshh123/notion-pdf-export/releases/download/1.1.0/mac_notion-pdf-export_1.1.0.zip)
 
 ## Usage
 
@@ -16,11 +19,11 @@ Get the latest download for Windows and Mac from the releases page:
 
     ![downloaded_program](/docs/downloaded_program.png)
 
-2. In [Notion](https://notion.so), go to the database and click Export, choose 'Markdown & CSV' and ensure 'Include Subpages' is on.
+2. In [Notion](https://notion.so), go to the database and click Export, choose 'HTML' and ensure 'Include Subpages' is on.
 
     ![notion-export](/docs/notion-export.png)
 
-3. Extract and place the markdown files with folders containing images in the same folder as 'notion-pdf-export.exe' (Windows) or 'notion-pdf-export' (Mac).
+3. Extract and place the html files with folders containing images in the same folder as 'notion-pdf-export.exe' (Windows) or 'notion-pdf-export' (Mac).
 
     ![placing-markdown-files](/docs/placing-markdown-files.png)
 
@@ -28,7 +31,7 @@ Get the latest download for Windows and Mac from the releases page:
 
     ![running-program](/docs/running-program.png)
 
-5. A PDF book consisting of all the pages can be found in pdfs>book.pdf and all the individual pages can be found converted into pdfs at pdfs>pages .
+5. All the individual pages can be found converted into pdfs at pdfs>pages .
 
     ![created_pdfs](/docs/created_pdfs.png)
 
@@ -167,3 +170,5 @@ To distribute the Mac Executable (npe), place it in a directorywith the followin
     This can be obtained from 'mac_script.sh' or found inside /dist/macos
 
 ![macos_build](/docs/macos_build.png)
+
+<a href="https://iconscout.com/icons/notion" target="_blank">Notion Icon</a> by <a href="https://iconscout.com/contributors/Rengised">Alex Martinov</a> on <a href="https://iconscout.com">Iconscout</a>

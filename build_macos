@@ -1,0 +1,12 @@
+#/bin/bash
+cd "$0"/..
+npm install
+mkdir -p ./dist/macos/utils
+cp -R utils/wkhtmltopdf ./dist/macos/utils/wkhtmltopdf
+cp ./LICENSE ./dist/macos/LICENSE
+cp ./mac_script.sh ./dist/macos/notion-pdf-export
+rm ./dist/macos/utils/wkhtmltopdf/wkhtmltopdf.exe
+rm ./dist/macos/utils/wkhtmltopdf/wkhtmltox.dll
+rm ./dist/macos/utils/wkhtmltopdf/libwkhtmltox.a
+chmod +x ./dist/macos/notion-pdf-export
+nexe . -t macos-10.13.0 -o ./dist/macos/npe

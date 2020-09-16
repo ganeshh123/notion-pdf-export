@@ -81,7 +81,14 @@ typings/
 
 # Nuxt.js build / generate output
 .nuxt
-dist
+dist/macos/node_modules
+dist/macos/markdown-pdf
+dist/macos/npe
+dist/macos/utils
+
+dist/win32/node_modules
+dist/win32/utils/
+dist/win32/notion-pdf-exporter.exe
 
 # Gatsby files
 .cache/
@@ -104,5 +111,7 @@ dist
 # TernJS port file
 .tern-port
 
-markdowns/
 pdfs/
+dist/win32/notion-pdf-export.exe
+
+.DS_Store
