@@ -46,9 +46,7 @@ Get the latest download for Windows and Mac from the releases page:
     ```bash
     npm install
     ```
-
-2. Go to node_modules>phantomjs-prebuilt>lib>phantom>bin and copy 'phantomjs.exe' (Windows) or 'phantomjs' (Mac) into the the project root directory
-3. Run this command to run the script:
+2. Run this command to run the script:
 
     ```bash
     node index.js
@@ -148,17 +146,13 @@ in the root directory of the project. Note that this is built under the name 'np
 
 To distribute the Windows Executable, place it in a directory with the following:
 
-- The 'markdown-pdf' folder that comes with the source code
-- The original 'node_modules' folder from the source code
-- The 'phantomjs.exe' prebuilt binary for Windows placed inside 'markdown-pdf' folder. This can be found at ***node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs.exe***
+- The original 'utils' folder from the source code
 
-![win32-build](/docs/win32-build.png)
+![win32-build](./docs/win32-build.png)
 
 To distribute the Mac Executable (npe), place it in a directorywith the following:
 
-- The 'markdown-pdf' folder that comes with the source code
-- The original 'node_modules' folder from the source code
-- The 'phantomjs' prebuilt binary for Mac placed inside the 'markdown-pdf' folder. This can be found at ***node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs***
+- The original 'utils' folder from the source code
 - An executable unix shell script with the following contents, called 'notion-pdf-export':
 
     ```bash
@@ -169,6 +163,6 @@ To distribute the Mac Executable (npe), place it in a directorywith the followin
 
     This can be obtained from 'mac_script.sh' or found inside /dist/macos
 
-![macos_build](/docs/macos_build.png)
+![macos_build](./docs/macos_build.png)
 
 <a href="https://iconscout.com/icons/notion" target="_blank">Notion Icon</a> by <a href="https://iconscout.com/contributors/Rengised">Alex Martinov</a> on <a href="https://iconscout.com">Iconscout</a>
