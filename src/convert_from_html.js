@@ -28,7 +28,12 @@ let convertFromHtml = (htmlFiles, nextStep) => {
     htmlFiles.forEach((htmlFile, index) => {
         let htmlFilePath = path.join(process.cwd(), htmlFile)
         console.log('\nConverting ' + htmlFile)
-        exec(wkhtmltopdf, ['--enable-local-file-access', htmlFilePath, pdfDocs[index]])
+        let conversionOutput
+        try{
+            conversionOutput = exec(wkhtmltopdf, ['--enable-local-file-access', htmlFilePath, pdfDocs[index]])
+        }catch (exception){
+            console.log('Error with converting ' + htmlFile)
+        }
     })
 
     nextStep()
