@@ -31,6 +31,7 @@ let moveAssets = (targetPath) => {
 
 
         if(!isMac){
+            /* Windows has permission issues with merging folders, so using Robocopy instead */
             try{
                 roboOutput = exec('robocopy assets pdfs /E')
             }catch (err){
