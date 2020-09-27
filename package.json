@@ -4,7 +4,8 @@
   "description": "A tool to allow batch PDF export for free Notion users. Convert exported HTML files to PDFs.",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "test": "node index.js",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
