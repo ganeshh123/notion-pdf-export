@@ -15,6 +15,9 @@ Get the latest download for Windows and Mac from the releases page:
 
 ## Usage
 
+[![video guide](https://i.ytimg.com/vi/txKhyzwkAus/maxresdefault.jpg)](http://www.youtube.com/watch?v=txKhyzwkAus "video_guide")
+
+
 1. Download the tool and extract.
 
     ![downloaded_program](./docs/downloaded_program.png)
