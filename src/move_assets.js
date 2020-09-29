@@ -30,8 +30,10 @@ let moveAssets = (targetPath) => {
         })
 
 
+        /* Node FS Can't merge directories very well, so using native
+            programs to do this */
         if(!isMac){
-            /* Windows has permission issues with merging folders, so using Robocopy instead */
+            /* Using Robocopy on Windows*/
             try{
                 roboOutput = exec('robocopy assets pdfs /E')
             }catch (err){
@@ -45,6 +47,7 @@ let moveAssets = (targetPath) => {
                 console.log(err.output.toString());  // get full output
             }            
         }else{
+            /* Using Ditto on Mac */
             try{
                 bashOutput = exec('ditto ./assets ./pdfs')
                 bashOutput = exec('rm -r ./assets')
@@ -55,7 +58,7 @@ let moveAssets = (targetPath) => {
         }
 
         
-        console.log('\nSome Assets or Files could not be embedded into PDFs. You can find these in the pdfs folder.\n')
+        console.log('\nSome Files could not be embedded into PDFs. You can find these in the pdfs folder.\n')
     }
 
 }

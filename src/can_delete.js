@@ -1,6 +1,4 @@
 let extensionsToDelete = [
-    'md',
-    'markdown',
     'png',
     'html',
     'jpg',
