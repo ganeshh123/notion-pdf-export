@@ -28,8 +28,12 @@ let renameToAscii = (files) => {
             let oldFile = file
             let newFile = newFileName
 
-            fileSystem.renameSync(oldFile, newFile)
-            newListOfFiles[index] = newFile
+            try{
+                fileSystem.renameSync(oldFile, newFile)
+                newListOfFiles[index] = newFile
+            }catch(err) {
+                console.log('Error renaming ' + oldFile)
+            }
         }
     })
 
