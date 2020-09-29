@@ -1,6 +1,7 @@
 let exec = require('child_process').execFileSync
 let fileSystem = require('fs')
 let path = require('path')
+let createMissingFolders = require('./create_missing_folders')
 
 
 let isMac = process.platform === 'darwin'
@@ -17,18 +18,27 @@ let convertFromHtml = (htmlFiles, nextStep) => {
     console.log(htmlFiles)
     
     let pdfDocs = []
-    fileSystem.readdirSync(process.cwd()).forEach(fileName => {
-        if(fileName.includes('.html')){
-            let pdfFileName = fileName.replace('.html', '.pdf')
-            pdfDocs.push(path.join(process.cwd(), 'pdfs', pdfFileName))
-        }
+    let cwdLength = path.join(process.cwd()).length
+    htmlFiles.forEach((htmlFile) => {
+        let pdfFileName = htmlFile.replace('.html', '.pdf')
+        pdfFileName = pdfFileName.substring(cwdLength)
+        pdfFileName = path.join(process.cwd(), 'pdfs', pdfFileName)
+        pdfDocs.push(pdfFileName)
     })
+    console.log('PDF Docs')
+    console.log(pdfDocs)
     
     console.log('\nConverting HTML Files to PDF')
     htmlFiles.forEach((htmlFile, index) => {
-        let htmlFilePath = path.join(process.cwd(), htmlFile)
+        let htmlFilePath = path.join(htmlFile)
         console.log('\nConverting ' + htmlFile)
-        exec(wkhtmltopdf, ['--enable-local-file-access', htmlFilePath, pdfDocs[index]])
+        createMissingFolders(pdfDocs[index])
+        let conversionOutput
+        try{
+            conversionOutput = exec(wkhtmltopdf, ['--enable-local-file-access', htmlFilePath, pdfDocs[index]])
+        }catch (exception){
+            console.log('Error with converting ' + htmlFile)
+        }
     })
 
     nextStep()
