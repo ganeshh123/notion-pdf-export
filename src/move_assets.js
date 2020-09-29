@@ -45,7 +45,13 @@ let moveAssets = (targetPath) => {
                 console.log(err.output.toString());  // get full output
             }            
         }else{
-            
+            try{
+                bashOutput = exec('ditto ./assets ./pdfs')
+                bashOutput = exec('rm -r ./assets')
+            }catch (err){
+                console.log(err.status);             // get the return code
+                console.log(err.output.toString());  // get full output
+            }
         }
 
         
