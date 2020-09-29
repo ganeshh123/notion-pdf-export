@@ -9,9 +9,9 @@ Get the latest download for Windows and Mac from the releases page:
 
 [https://github.com/ganeshh123/notion-pdf-export/releases](https://github.com/ganeshh123/notion-pdf-export/releases/latest)
 
-[Download for Windows](https://github.com/ganeshh123/notion-pdf-export/releases/download/1.2.0/windows_notion-pdf-export_1.2.0.zip)
+[Download for Windows](https://github.com/ganeshh123/notion-pdf-export/releases/download/1.3.0/notion-pdf-export_windows_1.3.0.zip)
 
-[Download for Mac](https://github.com/ganeshh123/notion-pdf-export/releases/download/1.2.0/mac_notion-pdf-export_1.2.0.zip)
+[Download for Mac](https://github.com/ganeshh123/notion-pdf-export/releases/download/1.3.0/notion-pdf-export_mac_1.3.0.zip)
 
 ## Usage
 
