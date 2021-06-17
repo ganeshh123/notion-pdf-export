@@ -1,322 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Notion PDF Export</title>
-      <style>
-         @media print {
-         *,
-         *:before,
-         *:after {
-         background: transparent !important;
-         color: #000 !important;
-         box-shadow: none !important;
-         text-shadow: none !important;
-         }
-         a,
-         a:visited {
-         text-decoration: underline;
-         }
-         a[href]:after {
-         content: " ("attr(href) ")";
-         }
-         abbr[title]:after {
-         content: " ("attr(title) ")";
-         }
-         a[href^="#"]:after,
-         a[href^="javascript:"]:after {
-         content: "";
-         }
-         pre,
-         blockquote {
-         border: 1px solid #999;
-         page-break-inside: avoid;
-         }
-         thead {
-         display: table-header-group;
-         }
-         tr,
-         img {
-         page-break-inside: avoid;
-         }
-         img {
-         max-width: 100% !important;
-         }
-         p,
-         h2,
-         h3 {
-         orphans: 3;
-         widows: 3;
-         }
-         h2,
-         h3 {
-         page-break-after: avoid;
-         }
-         }
-         html {
-         font-size: 12px;
-         }
-         @media screen and (min-width: 32rem) and (max-width: 48rem) {
-         html {
-         font-size: 15px;
-         }
-         }
-         @media screen and (min-width: 48rem) {
-         html {
-         font-size: 16px;
-         }
-         }
-         body {
-         line-height: 1.85;
-         }
-         p,
-         .air-p {
-         font-size: 1rem;
-         margin-bottom: 1.3rem;
-         }
-         h1,
-         .air-h1,
-         h2,
-         .air-h2,
-         h3,
-         .air-h3,
-         h4,
-         .air-h4 {
-         margin: 1.414rem 0 .5rem;
-         font-weight: inherit;
-         line-height: 1.42;
-         }
-         h1,
-         .air-h1 {
-         margin-top: 0;
-         font-size: 3.998rem;
-         }
-         h2,
-         .air-h2 {
-         font-size: 2.827rem;
-         }
-         h3,
-         .air-h3 {
-         font-size: 1.999rem;
-         }
-         h4,
-         .air-h4 {
-         font-size: 1.414rem;
-         }
-         h5,
-         .air-h5 {
-         font-size: 1.121rem;
-         }
-         h6,
-         .air-h6 {
-         font-size: .88rem;
-         }
-         small,
-         .air-small {
-         font-size: .707em;
-         }
-         /* https://github.com/mrmrs/fluidity */
-         img,
-         canvas,
-         iframe,
-         video,
-         svg,
-         select,
-         textarea {
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" type="image/png" href="https://ganeshh123.github.io/assets/icon_trans.jpg" />
+   <title>Notion PDF Export - Convert Notion pages to PDFs</title>
+   <meta name="description" content="Batch Convert Notion pages to PDF documents, for free Notion Users." />
+   <style>
+      @font-face {
+         font-family: "iA Writer Quattro S";
+         src: url("https://cors.bridged.cc/https://ganeshh123.github.io/assets/iAWriterQuattroS-Regular.woff") format("woff")
+      }
+
+      * :not(code) {
+         font-family: 'iA Writer Quattro S', sans-serif;
+         color: rgba(255, 255, 255, 0.9);
+         box-sizing: border-box;
+      }
+
+      html {
+         max-height: 100vh;
+         max-width: 100vw;
+      }
+
+      body {
+         background-color: rgb(47, 52, 55);
+         max-width: 100vw;
+         overflow-y: auto;
+         display: flex;
+         flex-direction: column;
+         justify-content: flex-start;
+         align-items: flex-start;
+         padding-left: 10px;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      caption,
+      ul,
+      figure {
          max-width: 100%;
-         }
-         @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,300);
-         body {
-         color: #444;
-         font-family: 'Open Sans', Helvetica, sans-serif;
-         font-weight: 300;
-         margin: 6rem auto 1rem;
-         max-width: 48rem;
+      }
+
+      img {
+         max-width: 600px;
+         height: auto;
+      }
+
+      p {
+         margin-left: 10px;
+      }
+
+      pre,
+      code {
+         margin-left: 10px;
+         background-color: #3f4447;
+      }
+
+      #contents,
+      ul {
+         list-style-type: none;
+      }
+
+      iframe {
+         width: 640px;
+         height: 360px;
+      }
+
+      #footer {
+         margin-top: 15px;
          text-align: center;
+         width: 100vw;
+         margin-bottom: 10px;
+         text-decoration: none;
+      }
+
+      @media only screen and (max-width: 425px) {
+         iframe {
+            width: 384px;
+            height: 216px;
          }
-         a,
-         a:visited {
-         color: #3498db;
+
+         img {
+            max-width: 300px;
+            height: auto;
          }
-         a:hover,
-         a:focus,
-         a:active {
-         color: #2980b9;
-         }
-         pre {
-         background-color: #fafafa;
-         padding: 1rem;
-         text-align: left;
-         }
-         blockquote {
-         margin: 0;
-         border-left: 5px solid #7a7a7a;
-         font-style: italic;
-         padding: 1.33em;
-         text-align: left;
-         }
-         ul,
-         ol,
-         li {
-         text-align: left;
-         }
-         p {
-         color: #777;
-         }
-      </style>
-   </head>
-   <body>
-      <h1 id="notion-pdf-export">Notion PDF Export</h1>
-      <p>A tool to allow batch PDF export for free Notion users. You can export as HTML with subpages and then use this
-         tool to convert those into PDFs.
-      </p>
-      <h2 id="download">Download</h2>
-      <p>Get the latest download for Windows and Mac from the releases page:</p>
-      <p><a
+      }
+   </style>
+</head>
+
+<body>
+   <h1 id="notion-pdf-export">Notion PDF Export</h1>
+   <p>A tool to allow batch PDF export for free Notion users. You can export as HTML with subpages and then use this
+      tool to convert those into PDFs.</p>
+   <ul>
+      <li><a href="#notion-pdf-export">Notion PDF Export</a></li>
+      <li><a href="#download">Download</a></li>
+      <li><a href="#usage">Usage</a></li>
+      <li><a href="#building">Building</a></li>
+      <ul>
+         <li><a href="#running-the-project-on-node">Running the Project on Node</a></li>
+         <li><a href="#compiling-an-executable">Compiling an Executable</a></li>
+         <ul>
+            <li><a href="#installing-nexe">Installing nexe</a></li>
+            <ul>
+               <li><a href="#to-install-automatically">To Install Automatically:</a></li>
+               <li><a href="#to-install-manually">To Install Manually:</a></li>
+            </ul>
+
+            <li><a href="#compiling-executables">Compiling Executables</a></li>
+            <ul>
+               <li><a href="#compile-automatically">Compile Automatically</a></li>
+               <li><a href="#compile-manually">Compile Manually</a></li>
+            </ul>
+
+         </ul>
+
+      </ul>
+
+      <li><a href="#credits">Credits</a></li>
+      <ul>
+         <li><a href="#wkhtmltopdf">wkhtmltopdf</a></li>
+         <li><a href="#assets">Assets</a></li>
+      </ul>
+   </ul>
+   <h1 id="download">Download</h1>
+   <p>Get the latest download for Windows and Mac from the releases page:</p>
+   <p><a
          href="https://github.com/ganeshh123/notion-pdf-export/releases/latest">https://github.com/ganeshh123/notion-pdf-export/releases</a>
-      </p>
-      <p><a
+   </p>
+   <p><a
          href="https://github.com/ganeshh123/notion-pdf-export/releases/download/1.3.0/notion-pdf-export_windows_1.3.0.zip">Download
-         for Windows</a>
-      </p>
-      <p><a
-         href="https://github.com/ganeshh123/notion-pdf-export/releases/download/1.3.0/notion-pdf-export_mac_1.3.0.zip">Download
-         for Mac</a>
-      </p>
-      <h2 id="usage">Usage</h2>
-      <ol>
-         <li>
-            <p>Download the tool and extract.</p>
-            <p> <img src="./downloaded_program.png" alt="downloaded_program"></p>
-         </li>
-         <li>
-            <p>In <a href="https://notion.so">Notion</a>, place all the pages you wish to export into one page and click
-               Export, choose 'HTML' and ensure 'Include Subpages' is on.
-            </p>
-            <p> <img src="./notion-export.png" alt="notion-export"></p>
-         </li>
-         <li>
-            <p>Extract the export to find a list of HTML files and folders for each page. Place the HTML files with
-               folders containing images in the same folder as 'notion-pdf-export.exe' (Windows) or 'notion-pdf-export'
-               (Mac).
-            </p>
-            <p> <img src="./placing-html-files.png" alt="placing-markdown-files"></p>
-         </li>
-         <li>
-            <p>Double Click 'notion-pdf-export.exe' (Windows) or 'notion-pdf-export' (Mac) and wait for the process to
-               be completed.
-            </p>
-            <p> <img src="./running-program.png" alt="running-program"></p>
-         </li>
-         <li>
-            <p>All the individual pages can be found converted into PDF Documents inside the pdfs folder.</p>
-            <p> <img src="./created_pdfs.png" alt="created_pdfs"></p>
-         </li>
-      </ol>
-      <hr>
-      <h2 id="building">Building</h2>
-      <h3 id="running-the-project-on-node">Running the Project on Node</h3>
-      <ol>
-         <li>
-            <p>Clone/Download the project and run the command in the project root directory:</p>
-            <pre><code class="language-bash"> npm install</code></pre>
-         </li>
-         <li>
-            <p>Run this command to run the script:</p>
-            <pre><code class="language-bash"> node index.js</code></pre>
-         </li>
-      </ol>
-      <h3 id="compiling-an-executable">Compiling an Executable</h3>
-      <p>This is tricky. A lot of adjustments had to be made so that it can run without node.</p>
-      <p><strong>Installing nexe</strong></p>
-      <p>Executables are compiled with a very <a href="https://github.com/cspotcode/nexe/tree/fix-vfs">specific version of
-         nexe</a> that allows access to the filesystem, which has a tricky setup procedure.
-      </p>
-      <p>To install automatically:</p>
-      <p>Run <strong>install_nexe_win.bat</strong> as admin on <strong>Windows</strong>, will take about 5 minutes to
-         install fully.
-      </p>
-      <p>Or</p>
-      <p>Run <strong>install_nexe_mac</strong> on <strong>Mac</strong>, will take about 5 minutes to install, and you will
-         need to enter password. This sometimes doesn't seem to work properly, so might be worth doing manual install if
-         there's problems.
-      </p>
-      <p>Alternatively, install manually like this:</p>
-      <ol>
-         <li>
-            <p>Firstly, install the general <a href="https://www.npmjs.com/package/nexe">nexe</a> globally with the
-               command:
-            </p>
-            <pre><code class="language-bash"> npm install -g nexe</code></pre>
-            <p> In Windows with Command Prompt running as Admin. Or:</p>
-            <pre><code class="language-bash"> sudo npm install -g nexe</code></pre>
-            <p> In Mac in the terminal</p>
-         </li>
-         <li>
-            <p>In the project root folder build some executables with this version of nexe to download node binaries for
-               Windows and Mac:
-            </p>
-            <pre><code class="language-bash"> nexe . --target win32-x86-10.13.0
- nexe . -t macos-10.13.0</code></pre>
-            <p> This will download the binaries we need for later, delete the executables built with this for now.</p>
-         </li>
-         <li>
-            <p>Now we need to install a <a href="https://github.com/cspotcode/nexe/tree/fix-vfs">specific version of
-               nexe</a> that allows access to the filesystem:
-            </p>
-            <p> Run the command:</p>
-            <pre><code class="language-bash"> npm install -g cspotcode/nexe#19a5046</code></pre>
-            <p> In Windows with Command Prompt running as Admin. Or:</p>
-            <pre><code class="language-bash"> sudo npm install -g cspotcode/nexe#19a5046</code></pre>
-         </li>
-      </ol>
-      <p>Now we should have the correct version of nexe for building.</p>
-      <p>Confirm by running:</p>
-      <pre><code class="language-bash">nexe -v</code></pre>
-      <p><img src="/docs/nexe-version.png" alt="nexe-version"></p>
-      <p>Check that the version is <code>4.0.0-beta.4</code></p>
-      <p><strong>Compiling Executables</strong></p>
-      <p>To Compile Automatically</p>
-      <p>Run <strong>build_win32.bat</strong> on <strong>Windows</strong> to build a Windows Executable. This can be found
-         in /dist/win32 and everything in that folder must be distributed together.
-      </p>
-      <p>Run <strong>build_macos</strong> on <strong>Mac</strong> to build a Mac Executable. This can be found in
-         /dist/macos and everything in that folder must be distributed together.
-      </p>
-      <p>If you wish to compile for Mac on Windows or Vice Versa, you can do so using the manual method below. This is
-         trickier and will require obtaining a phantomjs binary built for the desired platform and placing it in the
-         correct place.
-      </p>
-      <p>To Compile Manually</p>
-      <p>To build a Windows Executable, run the command:</p>
-      <pre><code class="language-bash">nexe . --target win32-x86-10.13.0 -o ./dist/win32/notion-pdf-export.exe</code></pre>
-      <p>in the root directory of the project.</p>
-      <p>To build a Mac executable, run the command:</p>
-      <pre><code class="language-bash">nexe . -t macos-10.13.0 -o ./dist/macos/npe</code></pre>
-      <p>in the root directory of the project. Note that this is built under the name 'npe' which is done for a reason.
-      </p>
-      <p>To distribute the Windows Executable, place it in a directory with the following:</p>
-      <ul>
-         <li>The original 'utils' folder from the source code</li>
-      </ul>
-      <p>To distribute the Mac Executable (npe), place it in a directorywith the following:</p>
-      <ul>
-         <li>
-            <p>The original 'utils' folder from the source code</p>
-         </li>
-         <li>
-            <p>An executable unix shell script with the following contents, called 'notion-pdf-export':</p>
-            <pre><code class="language-bash">  #/bin/bash
-  cd "$0"/..
-  ./npe</code></pre>
-            <p> This can be obtained from 'mac_script.sh' or found inside /dist/macos</p>
-         </li>
-      </ul>
-      <h2 id="credits">Credits</h2>
-      <p><a href="https://iconscout.com/icons/notion" target="_blank">Notion Icon</a> by <a
+         for Windows</a></p>
+   <p><a href="https://github.com/ganeshh123/notion-pdf-export/releases/download/1.3.0/notion-pdf-export_mac_1.3.0.zip">Download
+         for Mac</a></p>
+   <h1 id="usage">Usage</h1>
+   <iframe src="https://www.youtube-nocookie.com/embed/txKhyzwkAus" title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+   <br />
+   <caption>Video Guide</caption>
+   <ol>
+      <li>
+         <p>Download the tool and extract.</p>
+         <p>
+         <figure><img src="downloaded_program.jpg" alt="downloaded_program"></figure>
+         </p>
+      </li>
+      <li>
+         <p>In <a href="https://notion.so">Notion</a>, place all the pages you wish to export into one page and click
+            Export, choose &lsquo;HTML&rsquo; and ensure &lsquo;Include Subpages&rsquo; is on.</p>
+         <p>
+         <figure><img src="notion-export.jpg" alt="notion-export"></figure>
+         </p>
+      </li>
+      <li>
+         <p>Extract the export to find a list of HTML files and folders for each page. Place the HTML files with folders
+            containing images in the same folder as &lsquo;notion-pdf-export.exe&rsquo; (Windows) or
+            &lsquo;notion-pdf-export&rsquo; (Mac).</p>
+         <p>
+         <figure><img src="placing-html-files.jpg" alt="placing-markdown-files"></figure>
+         </p>
+      </li>
+      <li>
+         <p>Double Click &lsquo;notion-pdf-export.exe&rsquo; (Windows) or &lsquo;notion-pdf-export&rsquo; (Mac) and wait
+            for the process to be completed.</p>
+         <p>
+         <figure><img src="running-program.jpg" alt="running-program"></figure>
+         </p>
+         <p>If nothing happens, you may need to go to macOS security settings and click 'Open Anyway'.</p>
+         <p>
+            <figure><img src="macos_security.jpg" alt="running-program"></figure>
+         </p>
+      </li>
+      <li>
+         <p>All the individual pages can be found converted into PDF Documents inside the pdfs folder.</p>
+         <p>
+         <figure><img src="created_pdfs.jpg" alt="created_pdfs"></figure>
+         </p>
+      </li>
+   </ol>
+   <hr>
+   <h1 id="building">Building</h1>
+   <h2 id="running-the-project-on-node">Running the Project on Node</h2>
+   <ol>
+      <li>
+         <p>Clone/Download the project and run the command in the project root directory:</p>
+         <pre><code class="language-bash">npm install</code></pre>
+      </li>
+      <li>
+         <p>Run this command to run the script:</p>
+         <pre><code class="language-bash">node index.js</code></pre>
+      </li>
+   </ol>
+   <h2 id="compiling-an-executable">Compiling an Executable</h2>
+   <p>This is tricky. A lot of adjustments had to be made so that it can run without node.</p>
+   <h3 id="installing-nexe">Installing nexe</h3>
+   <p>Executables are compiled with a very <a href="https://github.com/cspotcode/nexe/tree/fix-vfs">specific version of
+         nexe</a> that allows access to the filesystem, which has a tricky setup procedure.</p>
+   <h4 id="to-install-automatically">To Install Automatically:</h4>
+   <p>Run <strong>install_nexe_win.bat</strong> as admin on <strong>Windows</strong>, will take about 5 minutes to
+      install fully.</p>
+   <p>Or</p>
+   <p>Run <strong>install_nexe_mac</strong> on <strong>Mac</strong>, will take about 5 minutes to install, and you will
+      need to enter password. This sometimes doesn&rsquo;t seem to work properly, so might be worth doing manual install
+      if there&rsquo;s problems.</p>
+   <h4 id="to-install-manually">To Install Manually:</h4>
+   <ol>
+      <li>
+         <p>Firstly, install the general <a href="https://www.npmjs.com/package/nexe">nexe</a> globally with the
+            command:</p>
+         <pre><code class="language-bash">npm install -g nexe</code></pre>
+         <p>In Windows with Command Prompt running as Admin. Or:</p>
+         <pre><code class="language-bash">sudo npm install -g nexe</code></pre>
+         <p>In Mac in the terminal</p>
+      </li>
+      <li>
+         <p>In the project root folder build some executables with this version of nexe to download node binaries for
+            Windows and Mac:</p>
+         <pre><code class="language-bash">nexe . --target win32-x86-10.13.0
+   nexe . -t macos-10.13.0</code></pre>
+         <p>This will download the binaries we need for later, delete the executables built with this for now.</p>
+      </li>
+      <li>
+         <p>Now we need to install a <a href="https://github.com/cspotcode/nexe/tree/fix-vfs">specific version of
+               nexe</a> that allows access to the filesystem:</p>
+         <p>Run the command:</p>
+         <pre><code class="language-bash">npm install -g cspotcode/nexe#19a5046
+   </code></pre>
+         <p>In Windows with Command Prompt running as Admin. Or:</p>
+         <pre><code class="language-bash">sudo npm install -g cspotcode/nexe#19a5046
+   </code></pre>
+      </li>
+   </ol>
+   <p>Now we should have the correct version of nexe for building.</p>
+   <p>Confirm by running:</p>
+   <pre><code class="language-bash">nexe -v</code></pre>
+   <p>
+   <figure><img src="nexe-version.jpg" alt="nexe-version"></figure>
+   </p>
+   <p>Check that the version is <code>4.0.0-beta.4</code></p>
+   <h3 id="compiling-executables">Compiling Executables</h3>
+   <h4 id="compile-automatically">Compile Automatically</h4>
+   <p>Run <strong>build_win32.bat</strong> on <strong>Windows</strong> to build a Windows Executable. This can be found
+      in /dist/win32 and everything in that folder must be distributed together.</p>
+   <p>Run <strong>build_macos</strong> on <strong>Mac</strong> to build a Mac Executable. This can be found in
+      /dist/macos and everything in that folder must be distributed together.</p>
+   <p>If you wish to compile for Mac on Windows or Vice Versa, you can do so using the manual method below. This is
+      trickier and will require obtaining a phantomjs binary built for the desired platform and placing it in the
+      correct place.</p>
+   <h4 id="compile-manually">Compile Manually</h4>
+   <p>To build a Windows Executable, run the command:</p>
+   <pre><code class="language-bash">nexe . --target win32-x86-10.13.0 -o ./dist/win32/notion-pdf-export.exe</code></pre>
+   <p>in the root directory of the project.</p>
+   <p>To build a Mac executable, run the command:</p>
+   <pre><code class="language-bash">nexe . -t macos-10.13.0 -o ./dist/macos/npe</code></pre>
+   <p>in the root directory of the project. Note that this is built under the name &lsquo;npe&rsquo; which is done for a
+      reason.</p>
+   <p>To distribute the Windows Executable, place it in a directory with the following:</p>
+   <ul>
+      <li>The original &lsquo;utils&rsquo; folder from the source code</li>
+   </ul>
+   <p>To distribute the Mac Executable (npe), place it in a directorywith the following:</p>
+   <ul>
+      <li>
+         <p>The original &lsquo;utils&rsquo; folder from the source code</p>
+      </li>
+      <li>
+         <p>An executable unix shell script with the following contents, called &lsquo;notion-pdf-export&rsquo;:</p>
+         <pre><code class="language-bash">#/bin/bash
+ cd &quot;$0&quot;/..
+ ./npe</code></pre>
+         <p>This can be obtained from &lsquo;mac_script.sh&rsquo; or found inside /dist/macos</p>
+      </li>
+   </ul>
+   <h1 id="credits">Credits</h1>
+   <h2 id="wkhtmltopdf">wkhtmltopdf</h2>
+   <p>This project uses wkhtmltopdf for the conversions. This brilliant tool was created by <a
+         href="https://github.com/antialize">Jakob Truelsen</a> and is now maintained by <a
+         href="https://github.com/ashkulz">Ashish Kulkarni</a>. Version <code>0.12.6</code> has been used, and can be <a
+         href="https://wkhtmltopdf.org/downloads.html">downloaded here</a>.</p>
+   <p>wkhtmltopdf is released under the LGPL-3.0 License which can be found at <code>utils/wkhtmltopdf/LICENSE</code>.
+      The source code is available at the <a href="https://github.com/wkhtmltopdf/wkhtmltopdf">wkhtmltopdf
+         repository</a>.</p>
+   <h2 id="assets">Assets</h2>
+   <p><a href="https://iconscout.com/icons/notion" target="_blank">Notion Icon</a> by <a
          href="https://iconscout.com/contributors/Rengised">Alex Martinov</a> on <a
          href="https://iconscout.com">Iconscout</a></p>
-      <p>by <a href="https://nesh.gq">Ganesh H</a></p>
-   </body>
+
+   <a id='footer' href='https://nesh.gq/'>Ganesh H</a>
+</body>
+
 </html>
