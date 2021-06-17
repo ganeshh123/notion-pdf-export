@@ -20,25 +20,27 @@ Get the latest download for Windows and Mac from the releases page:
 
 1. Download the tool and extract.
 
-    ![downloaded_program](docs/downloaded_program.png)
+    ![downloaded_program](docs/downloaded_program.jpg)
 
 2. In [Notion](https://notion.so), place all the pages you wish to export into one page and click Export, choose 'HTML' and ensure 'Include Subpages' is on.
 
-    ![notion-export](docs/notion-export.png)
+    ![notion-export](docs/notion-export.jpg)
 
 3. Extract the export to find a list of HTML files and folders for each page. Place the HTML files with folders containing images in the same folder as 'notion-pdf-export.exe' (Windows) or 'notion-pdf-export' (Mac).
 
-    ![placing-markdown-files](docs/placing-html-files.png)
+    ![placing-markdown-files](docs/placing-html-files.jpg)
 
 4. Double Click 'notion-pdf-export.exe' (Windows) or 'notion-pdf-export' (Mac) and wait for the process to be completed.
 
-    ![running-program](docs/running-program.png)
+    ![running-program](docs/running-program.jpg)
     
-    If nothing happens, you may need to go to macOS security settings and click 'Open Anyway'.
+    If nothing happens, you may need to go to macOS security settings and click 'Open Anyway':
+
+    ![macOS_security](docs/macos_security.jpg)
 
 5. All the individual pages can be found converted into PDF Documents inside the pdfs folder.
 
-    ![created_pdfs](docs/created_pdfs.png)
+    ![created_pdfs](docs/created_pdfs.jpg)
 
 ---
 
@@ -120,7 +122,7 @@ Confirm by running:
 nexe -v
 ```
 
-![nexe-version](docs/nexe-version.png)
+![nexe-version](docs/nexe-version.jpg)
 
 Check that the version is `4.0.0-beta.4`
 
