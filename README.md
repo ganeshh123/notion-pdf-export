@@ -2,8 +2,7 @@
 
 A tool to allow batch PDF export for free Notion users. You can export as HTML with subpages and then use this tool to convert those into PDFs.
 
-
-## Download
+# Download
 
 Get the latest download for Windows and Mac from the releases page:
 
@@ -13,7 +12,7 @@ Get the latest download for Windows and Mac from the releases page:
 
 [Download for Mac](https://github.com/ganeshh123/notion-pdf-export/releases/download/1.3.0/notion-pdf-export_mac_1.3.0.zip)
 
-## Usage
+# Usage
 
 [![video guide](https://i.ytimg.com/vi/txKhyzwkAus/maxresdefault.jpg)](http://www.youtube.com/watch?v=txKhyzwkAus "video_guide")
 [Video Guide](https://youtu.be/txKhyzwkAus)
@@ -21,29 +20,29 @@ Get the latest download for Windows and Mac from the releases page:
 
 1. Download the tool and extract.
 
-    ![downloaded_program](./docs/downloaded_program.png)
+    ![downloaded_program](docs/downloaded_program.png)
 
 2. In [Notion](https://notion.so), place all the pages you wish to export into one page and click Export, choose 'HTML' and ensure 'Include Subpages' is on.
 
-    ![notion-export](./docs/notion-export.png)
+    ![notion-export](docs/notion-export.png)
 
 3. Extract the export to find a list of HTML files and folders for each page. Place the HTML files with folders containing images in the same folder as 'notion-pdf-export.exe' (Windows) or 'notion-pdf-export' (Mac).
 
-    ![placing-markdown-files](./docs/placing-html-files.png)
+    ![placing-markdown-files](docs/placing-html-files.png)
 
 4. Double Click 'notion-pdf-export.exe' (Windows) or 'notion-pdf-export' (Mac) and wait for the process to be completed.
 
-    ![running-program](./docs/running-program.png)
+    ![running-program](docs/running-program.png)
 
 5. All the individual pages can be found converted into PDF Documents inside the pdfs folder.
 
-    ![created_pdfs](./docs/created_pdfs.png)
+    ![created_pdfs](docs/created_pdfs.png)
 
 ---
 
-## Building
+# Building
 
-### Running the Project on Node
+## Running the Project on Node
 
 1. Clone/Download the project and run the command in the project root directory:
 
@@ -56,15 +55,15 @@ Get the latest download for Windows and Mac from the releases page:
     node index.js
     ```
 
-### Compiling an Executable
+## Compiling an Executable
 
 This is tricky. A lot of adjustments had to be made so that it can run without node.
 
-**Installing nexe**
+### Installing nexe
 
 Executables are compiled with a very [specific version of nexe](https://github.com/cspotcode/nexe/tree/fix-vfs) that allows access to the filesystem, which has a tricky setup procedure.
 
-To install automatically:
+#### To Install Automatically:
 
 Run **install_nexe_win.bat** as admin on **Windows**, will take about 5 minutes to install fully.
 
@@ -72,7 +71,7 @@ Or
 
 Run **install_nexe_mac** on **Mac**, will take about 5 minutes to install, and you will need to enter password. This sometimes doesn't seem to work properly, so might be worth doing manual install if there's problems.
 
-Alternatively, install manually like this:
+#### To Install Manually:
 
 1. Firstly, install the general [nexe](https://www.npmjs.com/package/nexe) globally with the command:
 
@@ -119,13 +118,13 @@ Confirm by running:
 nexe -v
 ```
 
-![nexe-version](/docs/nexe-version.png)
+![nexe-version](docs/nexe-version.png)
 
 Check that the version is `4.0.0-beta.4`
 
-**Compiling Executables**
+### Compiling Executables
 
-To Compile Automatically
+#### Compile Automatically
 
 Run **build_win32.bat** on **Windows** to build a Windows Executable. This can be found in /dist/win32 and everything in that folder must be distributed together.
 
@@ -134,7 +133,7 @@ Run **build_macos** on **Mac** to build a Mac Executable. This can be found in /
 If you wish to compile for Mac on Windows or Vice Versa, you can do so using the manual method below. This is trickier and will require obtaining a phantomjs binary built for the desired platform and placing it in the correct place.
 
 
-To Compile Manually
+#### Compile Manually
 
 To build a Windows Executable, run the command:
 ```bash
@@ -166,5 +165,14 @@ To distribute the Mac Executable (npe), place it in a directorywith the followin
 
     This can be obtained from 'mac_script.sh' or found inside /dist/macos
 
-## Credits
+# Credits
+
+## wkhtmltopdf
+
+This project uses wkhtmltopdf for the conversions. This brilliant tool was created by [Jakob Truelsen](https://github.com/antialize) and is now maintained by [Ashish Kulkarni](https://github.com/ashkulz). Version `0.12.6` has been used, and can be [downloaded here](https://wkhtmltopdf.org/downloads.html).
+
+wkhtmltopdf is released under the LGPL-3.0 License which can be found at `utils/wkhtmltopdf/LICENSE`. The source code is available at the [wkhtmltopdf repository](https://github.com/wkhtmltopdf/wkhtmltopdf). 
+
+## Assets
+
 <a href="https://iconscout.com/icons/notion" target="_blank">Notion Icon</a> by <a href="https://iconscout.com/contributors/Rengised">Alex Martinov</a> on <a href="https://iconscout.com">Iconscout</a>
