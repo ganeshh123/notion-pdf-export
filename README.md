@@ -33,6 +33,8 @@ Get the latest download for Windows and Mac from the releases page:
 4. Double Click 'notion-pdf-export.exe' (Windows) or 'notion-pdf-export' (Mac) and wait for the process to be completed.
 
     ![running-program](docs/running-program.png)
+    
+    If nothing happens, you may need to go to macOS security settings and click 'Open Anyway'.
 
 5. All the individual pages can be found converted into PDF Documents inside the pdfs folder.
 
