@@ -1,15 +1,20 @@
 let fileSystem = require('fs')
 let path = require('path')
 let evilCharacterRegex = /[^\x00-\x7F]/g
+let getAllFilePaths = require('./get_all_filepaths')
+
+let rescanNeeded = false
 
 let renameToAscii = (files) => {
 
     let newListOfFiles = files
 
-    files.forEach((file) => {
+    /* Rename Files to ASCII */
+    newListOfFiles.forEach((file, index) => {
         let evilCharacters = file.match(evilCharacterRegex)
 
         if(evilCharacters){
+
             console.log('Evil Characters Found:')
             console.log(evilCharacters)
 
@@ -20,19 +25,31 @@ let renameToAscii = (files) => {
 
             console.log('Renaming to ' + newFileName)
 
-            let oldFile = path.join(process.cwd(), file)
-            let newFile = path.join(process.cwd(), newFileName)
+            let oldFile = file
+            let newFile = newFileName
 
-            fileSystem.renameSync(oldFile, newFile)
-
-            newListOfFiles = []
-            fileSystem.readdirSync(process.cwd()).forEach(file => {
-                if(file.includes('.html') || file.includes('.htm')){
-                    newListOfFiles.push(file)
-                }
-            })
+            try{
+                fileSystem.renameSync(oldFile, newFile)
+                newListOfFiles[index] = newFile
+            }catch(err) {
+                console.log('Error renaming ' + oldFile)
+            }
         }
     })
+
+    /*
+    if(rescanNeeded){
+        newListOfFiles = []
+        let allFiles = getAllFilePaths(process.cwd())
+        allFiles.forEach(file => {
+            if(file.includes('.html') || file.includes('.htm')){
+                newListOfFiles.push(file)
+            }
+        })
+        console.log('Rescanned')
+        console.log(newListOfFiles)
+    }
+    */
     
     return newListOfFiles
 }
