@@ -5,118 +5,33 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="icon" type="image/png" href="https://ganeshh123.github.io/assets/icon_trans.jpg" />
+   <link rel="icon" type="image/png" href="https://app.nesh.gq/assets/icon_trans.png" />
    <title>Notion PDF Export - Convert Notion pages to PDFs</title>
    <meta name="description" content="Batch Convert Notion pages to PDF documents, for free Notion Users." />
-   <style>
-      @font-face {
-         font-family: "iA Writer Quattro S";
-         src: url("https://cors.bridged.cc/https://ganeshh123.github.io/assets/iAWriterQuattroS-Regular.woff") format("woff")
-      }
-
-      * :not(code) {
-         font-family: 'iA Writer Quattro S', sans-serif;
-         color: rgba(255, 255, 255, 0.9);
-         box-sizing: border-box;
-      }
-
-      html {
-         max-height: 100vh;
-         max-width: 100vw;
-      }
-
-      body {
-         background-color: rgb(47, 52, 55);
-         max-width: 100vw;
-         overflow-y: auto;
-         display: flex;
-         flex-direction: column;
-         justify-content: flex-start;
-         align-items: flex-start;
-         padding-left: 10px;
-      }
-
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      p,
-      caption,
-      ul,
-      figure {
-         max-width: 100%;
-      }
-
-      img {
-         max-width: 600px;
-         height: auto;
-      }
-
-      p {
-         margin-left: 10px;
-      }
-
-      pre,
-      code {
-         margin-left: 10px;
-         background-color: #3f4447;
-      }
-
-      #contents,
-      ul {
-         list-style-type: none;
-      }
-
-      iframe {
-         width: 640px;
-         height: 360px;
-      }
-
-      #footer {
-         margin-top: 15px;
-         text-align: center;
-         width: 100vw;
-         margin-bottom: 10px;
-         text-decoration: none;
-      }
-
-      @media only screen and (max-width: 425px) {
-         iframe {
-            width: 384px;
-            height: 216px;
-         }
-
-         img {
-            max-width: 300px;
-            height: auto;
-         }
-      }
-   </style>
+   <link rel="stylesheet" href="https://nesh.gq/assets/style-project.css">
 </head>
 
 <body>
    <h1 id="notion-pdf-export">Notion PDF Export</h1>
    <p>A tool to allow batch PDF export for free Notion users. You can export as HTML with subpages and then use this
       tool to convert those into PDFs.</p>
-   <ul>
+   <ul class="contents">
       <li><a href="#notion-pdf-export">Notion PDF Export</a></li>
       <li><a href="#download">Download</a></li>
       <li><a href="#usage">Usage</a></li>
       <li><a href="#building">Building</a></li>
-      <ul>
+      <ul class="contents">
          <li><a href="#running-the-project-on-node">Running the Project on Node</a></li>
          <li><a href="#compiling-an-executable">Compiling an Executable</a></li>
-         <ul>
+         <ul class="contents">
             <li><a href="#installing-nexe">Installing nexe</a></li>
-            <ul>
+            <ul class="contents">
                <li><a href="#to-install-automatically">To Install Automatically:</a></li>
                <li><a href="#to-install-manually">To Install Manually:</a></li>
             </ul>
 
             <li><a href="#compiling-executables">Compiling Executables</a></li>
-            <ul>
+            <ul class="contents">
                <li><a href="#compile-automatically">Compile Automatically</a></li>
                <li><a href="#compile-manually">Compile Manually</a></li>
             </ul>
@@ -126,7 +41,7 @@
       </ul>
 
       <li><a href="#credits">Credits</a></li>
-      <ul>
+      <ul class="contents">
          <li><a href="#wkhtmltopdf">wkhtmltopdf</a></li>
          <li><a href="#assets">Assets</a></li>
       </ul>
