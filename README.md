@@ -42,7 +42,7 @@ Get the latest download for Windows and macOS from the releases page:
 3. Extract the export to find a list of HTML files and folders for each page. Place the HTML files with folders containing images in the same folder as `notion-pdf-export.exe` (Windows) or `notion-pdf-export` (macOS).  
     ![placing-markdown-files](docs/placing-html-files.jpg)
 4. Double click `notion-pdf-export.exe` (Windows) or `notion-pdf-export` (macOS) and wait for the process to be completed.  
-    ![running-program](docs/running-program.jpg)
+    ![running-program](docs/running-program.jpg)  
     If nothing happens, you may need to go to macOS security settings and click 'Open Anyway':  
     ![macOS_security](docs/macos_security.jpg)
 5. All the individual pages can be found converted into PDF Documents inside the `pdfs` folder.  
