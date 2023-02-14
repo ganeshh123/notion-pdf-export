@@ -30,7 +30,8 @@ Get the latest download for Windows and macOS from the releases page:
 
 ## Usage
 
-[![video guide](https://i.ytimg.com/vi/txKhyzwkAus/maxresdefault.jpg)](http://www.youtube.com/watch?v=txKhyzwkAus "video_guide")
+[![video guide](https://i.ytimg.com/vi/txKhyzwkAus/maxresdefault.jpg)](http://www.youtube.com/watch?v=txKhyzwkAus "video_guide")  
+
 [Video Guide](https://youtu.be/txKhyzwkAus)
 
 
@@ -38,14 +39,13 @@ Get the latest download for Windows and macOS from the releases page:
     ![downloaded_program](docs/downloaded_program.jpg)
 2. In [Notion](https://notion.so), place all the pages you wish to export into one page and click Export, choose 'HTML' and ensure 'Include Subpages' is on.
     ![notion-export](docs/notion-export.jpg)
-3. Extract the export to find a list of HTML files and folders for each page. Place the HTML files with folders containing images in the same folder as 'notion-pdf-export.exe' (Windows) or 'notion-pdf-export' (macOS).
+3. Extract the export to find a list of HTML files and folders for each page. Place the HTML files with folders containing images in the same folder as `notion-pdf-export.exe` (Windows) or `notion-pdf-export` (macOS).  
     ![placing-markdown-files](docs/placing-html-files.jpg)
-4. Double Click 'notion-pdf-export.exe' (Windows) or 'notion-pdf-export' (macOS) and wait for the process to be completed.
+4. Double click `notion-pdf-export.exe` (Windows) or `notion-pdf-export` (macOS) and wait for the process to be completed.  
     ![running-program](docs/running-program.jpg)
-    If nothing happens, you may need to go to macOS security settings and click 'Open Anyway':
+    If nothing happens, you may need to go to macOS security settings and click 'Open Anyway':  
     ![macOS_security](docs/macos_security.jpg)
-5. All the individual pages can be found converted into PDF Documents inside the pdfs folder.
-
+5. All the individual pages can be found converted into PDF Documents inside the `pdfs` folder.  
     ![created_pdfs](docs/created_pdfs.jpg)
 
 ---
